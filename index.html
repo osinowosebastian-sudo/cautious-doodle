@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team Phantom Roster ⚡</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto&display=swap" rel="stylesheet">
+<style>
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: #1e1e2f;
+  color: #fff;
+  position: relative;
+}
+
+/* Floating particles / phantom smoke */
+.particle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: rgba(0,255,255,0.1);
+  border-radius: 50%;
+  animation: floatParticle 20s linear infinite;
+}
+
+@keyframes floatParticle {
+  0% { transform: translateY(100vh) translateX(0) scale(1); opacity: 0.2; }
+  50% { transform: translateY(50vh) translateX(50px) scale(1.2); opacity: 0.4; }
+  100% { transform: translateY(-20vh) translateX(-50px) scale(1); opacity: 0.1; }
+}
+
+header {
+  text-align: center;
+  padding: 30px 20px;
+  background-color: rgba(30,30,47,0.9);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  position: relative;
+  z-index: 2;
+  animation: headerGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes headerGlow {
+  0% { text-shadow: 0 0 10px #00ffff, 0 0 20px #ff6b6b; }
+  100% { text-shadow: 0 0 20px #00ffff, 0 0 40px #ff6b6b; }
+}
+
+header h1 { font-family: 'Orbitron', sans-serif; font-size: 36px; margin: 0; color: #00ffff; }
+header p { font-size: 18px; color: #ff6b6b; }
+
+section { padding: 40px 20px; text-align: center; position: relative; z-index: 2; }
+h2 { font-family: 'Orbitron', sans-serif; font-size: 28px; margin-bottom: 30px; color: #00ffff; }
+
+.player-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+
+.player-card {
+  background: rgba(30,30,47,0.9);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 0 10px #00ffff50;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+.player-card::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
+  border-radius: 20px;
+  background: linear-gradient(45deg, #00ffff, #ff6b6b, #00ffff, #ff6b6b);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.player-card:hover::after { opacity: 0.5; }
+.player-card:hover { transform: translateY(-10px); box-shadow: 0 0 20px #00ffff, 0 0 10px #ff6b6b; }
+
+.player-card img { width: 100px; height: 100px; border-radius: 50%; border: 3px solid #00ffff; margin-bottom: 10px; }
+.player-card h3 { margin: 10px 0 5px 0; color: #ff6b6b; text-shadow: 0 0 5px #ff6b6b; }
+.player-card p { margin: 0; font-size: 14px; color: #fff; text-shadow: 0 0 3px #00ffff50; }
+
+footer {
+  background: rgba(30,30,47,0.9);
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+}
+footer a { color: #00ffff; text-decoration: none; margin: 0 10px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Team Phantom ⚡</h1>
+  <p>Dare, Determination, Aspiration</p>
+</header>
+
+<section>
+  <h2>Main Roster 🏆</h2>
+  <div class="player-grid">
+    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Player"><h3>Player1</h3><p>Captain</p><p>Discord: Player1#1234</p></div>
+    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Player"><h3>Player2</h3><p>Aggressor</p><p>Discord: Player2#1234</p></div>
+    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Player"><h3>Player3</h3><p>Support</p><p>Discord: Player3#1234</p></div>
+    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Player"><h3>Player4</h3><p>Sniper</p><p>Discord: Player4#1234</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Academy / Substitutes 🎓</h2>
+  <div class="player-grid">
+    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Trainee"><h3>Trainee1</h3><p>Role: Flex</p><p>Discord: Trainee1#1234</p></div>
+    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Trainee"><h3>Trainee2</h3><p>Role: Flex</p><p>Discord: Trainee2#1234</p></div>
+    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Trainee"><h3>Trainee3</h3><p>Role: Flex</p><p>Discord: Trainee3#1234</p></div>
+    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Trainee"><h3>Trainee4</h3><p>Role: Flex</p><p>Discord: Trainee4#1234</p></div>
+    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Trainee"><h3>Trainee5</h3><p>Role: Flex</p><p>Discord: Trainee5#1234</p></div>
+    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Trainee"><h3>Trainee6</h3><p>Role: Flex</p><p>Discord: Trainee6#1234</p></div>
+    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Trainee"><h3>Trainee7</h3><p>Role: Flex</p><p>Discord: Trainee7#1234</p></div>
+    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Trainee"><h3>Trainee8</h3><p>Role: Flex</p><p>Discord: Trainee8#1234</p></div>
+    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Trainee"><h3>Trainee9</h3><p>Role: Flex</p><p>Discord: Trainee9#1234</p></div>
+    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Trainee"><h3>Trainee10</h3><p>Role: Flex</p><p>Discord: Trainee10#1234</p></div>
+    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Trainee"><h3>Trainee11</h3><p>Role: Flex</p><p>Discord: Trainee11#1234</p></div>
+    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Trainee"><h3>Trainee12</h3><p>Role: Flex</p><p>Discord: Trainee12#1234</p></div>
+    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Trainee"><h3>Trainee13</h3><p>Role: Flex</p><p>Discord: Trainee13#1234</p></div>
+    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Trainee"><h3>Trainee14</h3><p>Role: Flex</p><p>Discord: Trainee14#1234</p></div>
+    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Trainee"><h3>Trainee15</h3><p>Role: Flex</p><p>Discord: Trainee15#1234</p></div>
+    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Trainee"><h3>Trainee16</h3><p>Role: Flex</p><p>Discord: Trainee16#1234</p></div>
+  </div>
+</section>
+
+<footer>
+  <p>Want to join? <a href="APPLICATION_FORM_URL_HERE">Apply Now</a></p>
+  <p>© 2025 Team Phantom</p>
+</footer>
+
+<script>
+  // Floating particles for background
+  for(let i=0;i<20;i++){
+    const particle = document.createElement('div');
+    particle.classList.add('particle');
+    particle.style.left = Math.random()*100 + 'vw';
+    particle.style.width = particle.style.height = (10+Math.random()*30)+'px';
+    particle.style.animationDuration = (15+Math.random()*20)+'s';
+    particle.style.animationDelay = (Math.random()*10)+'s';
+    document.body.appendChild(particle);
+  }
+</script>
+
+</body>
+</html>
