@@ -1,155 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Team Phantom Roster ⚡</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto&display=swap" rel="stylesheet">
-<style>
-body {
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  background: #1e1e2f;
-  color: #fff;
-  position: relative;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Phantom Roster</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background-color: #0a0a0a;
+      color: #fff;
+      overflow-x: hidden;
+    }
 
-/* Floating particles / phantom smoke */
-.particle {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background: rgba(0,255,255,0.1);
-  border-radius: 50%;
-  animation: floatParticle 20s linear infinite;
-}
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #111, #1a1a1a);
+      box-shadow: 0 0 20px rgba(230,0,0,0.6);
+    }
 
-@keyframes floatParticle {
-  0% { transform: translateY(100vh) translateX(0) scale(1); opacity: 0.2; }
-  50% { transform: translateY(50vh) translateX(50px) scale(1.2); opacity: 0.4; }
-  100% { transform: translateY(-20vh) translateX(-50px) scale(1); opacity: 0.1; }
-}
+    header h1 {
+      font-size: 3rem;
+      color: #e60000;
+      text-shadow: 0 0 15px #e60000;
+      animation: fadeInDown 1s ease-out;
+    }
 
-header {
-  text-align: center;
-  padding: 30px 20px;
-  background-color: rgba(30,30,47,0.9);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-  position: relative;
-  z-index: 2;
-  animation: headerGlow 2s ease-in-out infinite alternate;
-}
+    section {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-@keyframes headerGlow {
-  0% { text-shadow: 0 0 10px #00ffff, 0 0 20px #ff6b6b; }
-  100% { text-shadow: 0 0 20px #00ffff, 0 0 40px #ff6b6b; }
-}
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #e60000;
+      text-shadow: 0 0 10px #e60000;
+      animation: fadeIn 1.5s ease-out;
+    }
 
-header h1 { font-family: 'Orbitron', sans-serif; font-size: 36px; margin: 0; color: #00ffff; }
-header p { font-size: 18px; color: #ff6b6b; }
+    .roster-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
 
-section { padding: 40px 20px; text-align: center; position: relative; z-index: 2; }
-h2 { font-family: 'Orbitron', sans-serif; font-size: 28px; margin-bottom: 30px; color: #00ffff; }
+    .player-card {
+      background: #1a1a1a;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(255,255,255,0.1);
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: slideUp 0.8s forwards;
+    }
 
-.player-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+    .player-card:nth-child(1) { animation-delay: 0.2s; }
+    .player-card:nth-child(2) { animation-delay: 0.4s; }
+    .player-card:nth-child(3) { animation-delay: 0.6s; }
+    .player-card:nth-child(4) { animation-delay: 0.8s; }
+    .player-card:nth-child(5) { animation-delay: 1s; }
+    .player-card:nth-child(6) { animation-delay: 1.2s; }
+    .player-card:nth-child(7) { animation-delay: 1.4s; }
+    .player-card:nth-child(8) { animation-delay: 1.6s; }
+    .player-card:nth-child(9) { animation-delay: 1.8s; }
+    .player-card:nth-child(10){ animation-delay: 2s; }
+    .player-card:nth-child(11){ animation-delay: 2.2s; }
+    .player-card:nth-child(12){ animation-delay: 2.4s; }
+    .player-card:nth-child(13){ animation-delay: 2.6s; }
+    .player-card:nth-child(14){ animation-delay: 2.8s; }
+    .player-card:nth-child(15){ animation-delay: 3s; }
+    .player-card:nth-child(16){ animation-delay: 3.2s; }
+    .player-card:nth-child(17){ animation-delay: 3.4s; }
+    .player-card:nth-child(18){ animation-delay: 3.6s; }
+    .player-card:nth-child(19){ animation-delay: 3.8s; }
+    .player-card:nth-child(20){ animation-delay: 4s; }
 
-.player-card {
-  background: rgba(30,30,47,0.9);
-  border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 0 10px #00ffff50;
-  transition: transform 0.3s, box-shadow 0.3s;
-  position: relative;
-}
-.player-card::after {
-  content: '';
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  width: calc(100% + 20px);
-  height: calc(100% + 20px);
-  border-radius: 20px;
-  background: linear-gradient(45deg, #00ffff, #ff6b6b, #00ffff, #ff6b6b);
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-.player-card:hover::after { opacity: 0.5; }
-.player-card:hover { transform: translateY(-10px); box-shadow: 0 0 20px #00ffff, 0 0 10px #ff6b6b; }
+    .player-card:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 0 20px rgba(230,0,0,0.8);
+    }
 
-.player-card img { width: 100px; height: 100px; border-radius: 50%; border: 3px solid #00ffff; margin-bottom: 10px; }
-.player-card h3 { margin: 10px 0 5px 0; color: #ff6b6b; text-shadow: 0 0 5px #ff6b6b; }
-.player-card p { margin: 0; font-size: 14px; color: #fff; text-shadow: 0 0 3px #00ffff50; }
+    .player-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-bottom: 2px solid #e60000;
+    }
 
-footer {
-  background: rgba(30,30,47,0.9);
-  padding: 20px;
-  text-align: center;
-  color: #fff;
-  position: relative;
-  z-index: 2;
-}
-footer a { color: #00ffff; text-decoration: none; margin: 0 10px; }
-</style>
+    .player-card h3 {
+      margin: 15px 0 5px;
+      font-size: 1.3rem;
+      color: #fff;
+    }
+
+    .player-card p {
+      margin: 0 0 15px;
+      color: #aaa;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>Team Phantom ⚡</h1>
+  </header>
 
-<header>
-  <h1>Team Phantom ⚡</h1>
-  <p>Dare, Determination, Aspiration</p>
-</header>
+  <section>
+    <h2>Main Roster</h2>
+    <div class="roster-grid">
+      <div class="player-card"><img src="https://via.placeholder.com/300x250"><h3>PhantomAce</h3><p>Captain</p></div>
+      <div class="player-card"><img src="https://via.placeholder.com/300x250"><h3>ShadowStrike</h3><p>Aggressor</p></div>
+      <div class="player-card"><img src="https://via.placeholder.com/300x250"><h3>GhostEye</h3><p>Support</p></div>
+      <div class="player-card"><img src="https://via.placeholder.com/300x250"><h3>NightHawk</h3><p>Sniper</p></div>
+    </div>
+  </section>
 
-<section>
-  <h2>Main Roster 🏆</h2>
-  <div class="player-grid">
-    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Player"><h3>Player1</h3><p>Captain</p><p>Discord: Player1#1234</p></div>
-    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Player"><h3>Player2</h3><p>Aggressor</p><p>Discord: Player2#1234</p></div>
-    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Player"><h3>Player3</h3><p>Support</p><p>Discord: Player3#1234</p></div>
-    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Player"><h3>Player4</h3><p>Sniper</p><p>Discord: Player4#1234</p></div>
-  </div>
-</section>
-
-<section>
-  <h2>Academy / Substitutes 🎓</h2>
-  <div class="player-grid">
-    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Trainee"><h3>Trainee1</h3><p>Role: Flex</p><p>Discord: Trainee1#1234</p></div>
-    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Trainee"><h3>Trainee2</h3><p>Role: Flex</p><p>Discord: Trainee2#1234</p></div>
-    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Trainee"><h3>Trainee3</h3><p>Role: Flex</p><p>Discord: Trainee3#1234</p></div>
-    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Trainee"><h3>Trainee4</h3><p>Role: Flex</p><p>Discord: Trainee4#1234</p></div>
-    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Trainee"><h3>Trainee5</h3><p>Role: Flex</p><p>Discord: Trainee5#1234</p></div>
-    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Trainee"><h3>Trainee6</h3><p>Role: Flex</p><p>Discord: Trainee6#1234</p></div>
-    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Trainee"><h3>Trainee7</h3><p>Role: Flex</p><p>Discord: Trainee7#1234</p></div>
-    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Trainee"><h3>Trainee8</h3><p>Role: Flex</p><p>Discord: Trainee8#1234</p></div>
-    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Trainee"><h3>Trainee9</h3><p>Role: Flex</p><p>Discord: Trainee9#1234</p></div>
-    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Trainee"><h3>Trainee10</h3><p>Role: Flex</p><p>Discord: Trainee10#1234</p></div>
-    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Trainee"><h3>Trainee11</h3><p>Role: Flex</p><p>Discord: Trainee11#1234</p></div>
-    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Trainee"><h3>Trainee12</h3><p>Role: Flex</p><p>Discord: Trainee12#1234</p></div>
-    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Trainee"><h3>Trainee13</h3><p>Role: Flex</p><p>Discord: Trainee13#1234</p></div>
-    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Trainee"><h3>Trainee14</h3><p>Role: Flex</p><p>Discord: Trainee14#1234</p></div>
-    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Trainee"><h3>Trainee15</h3><p>Role: Flex</p><p>Discord: Trainee15#1234</p></div>
-    <div class="player-card"><img src="https://via.placeholder.com/100" alt="Trainee"><h3>Trainee16</h3><p>Role: Flex</p><p>Discord: Trainee16#1234</p></div>
-  </div>
-</section>
-
-<footer>
-  <p>Want to join? <a href="APPLICATION_FORM_URL_HERE">Apply Now</a></p>
-  <p>© 2025 Team Phantom</p>
-</footer>
-
-<script>
-  // Floating particles for background
-  for(let i=0;i<20;i++){
-    const particle = document.createElement('div');
-    particle.classList.add('particle');
-    particle.style.left = Math.random()*100 + 'vw';
-    particle.style.width = particle.style.height = (10+Math.random()*30)+'px';
-    particle.style.animationDuration = (15+Math.random()*20)+'s';
-    particle.style.animationDelay = (Math.random()*10)+'s';
-    document.body.appendChild(particle);
-  }
-</script>
-
+  <section>
+    <h2>Academy Roster</h2>
+    <div class="roster-grid">
+      <!-- 16 Academy Players -->
+      <div class="player-card"><img src="https://via.placeholder.com/300x250"><h3>Academy01</h3><p>Academy</p></div>
+      <div class="player-card"><img src="https://via.placeholder.com/300x250"><h3>Academy02</h3><p>Academy</p></div>
+      <div class="player-card"><img src="https://via.placeholder.com/300x250"><h3>Academy03</h3><p>Academy</p></div>
+      <div class="player-card"><img src="https://via.placeholder.com/300x250"><h3>Academy04</h3><p>Academy</p></div>
+      <div class="player-card"><img src="https://via.placeholder.com/300x250"><h3>Academy05</h3><p>Academy</p></div>
+      <div class="player-card"><img src="https://via.placeholder.com/300x250"><h3>Academy06</h3><p>Academy</p></div>
+      <div class="player-card"><img src="https://via.placeholder.com/300x250"><h3>Academy07</h3><p>Academy</p></div>
+      <div class="player-card"><img src="https://via.placeholder.com/300x250"><h3>Academy08</h3><p>Academy</p></div>
+      <div class="player-card"><img src="https://via.placeholder.com/300x250"><h3>Academy09</h3><p>Academy</p></div>
+      <div class="player-card"><img src="https://via.placeholder.com/300x250"><h3>Academy10</h3><p>Academy</p></div>
+      <div class="player-card"><img src="https://via.placeholder.com/300x250"><h3>Academy11</h3><p>Academy</p></div>
+      <div class="player-card"><img src="https://via.placeholder.com/300x250"><h3>Academy12</h3><p>Academy</p></div>
+      <div class="player-card"><img src="https://via.placeholder.com/300x250"><h3>Academy13</h3><p>Academy</p></div>
+      <div class="player-card"><img src="https://via.placeholder.com/300x250"><h3>Academy14</h3><p>Academy</p></div>
+      <div class="player-card"><img src="https://via.placeholder.com/300x250"><h3>Academy15</h3><p>Academy</p></div>
+      <div class="player-card"><img src="https://via.placeholder.com/300x250"><h3>Academy16</h3><p>Academy</p></div>
+    </div>
+  </section>
 </body>
 </html>
